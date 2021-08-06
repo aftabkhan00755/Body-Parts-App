@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/activity_main.xml" value="0.18072916666666666" />
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/fragment_body_back.xml" value="0.19519927536231885" />
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/fragment_body_front.xml" value="0.19519927536231885" />
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/region_item.xml" value="0.18072916666666666" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

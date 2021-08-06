@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:adjustViewBounds="true"
     android:src="@mipmap/man_front"
-    android:contentDescription="人体正面"
+    android:contentDescription="Human body front"
     android:clickable="true"
     android:tag="root"/>
 <!--<View xmlns:android="http://schemas.android.com/apk/res/android"-->

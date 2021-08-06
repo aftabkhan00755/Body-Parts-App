@@ -40,17 +40,19 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:onClick="genderClick">
+
                 <ImageView
                     android:id="@+id/man_icon"
-                    android:layout_width="25dp"
+                    android:layout_width="21dp"
                     android:layout_height="25dp"
-                    android:src="@mipmap/icon_man_pressed"/>
+                    android:visibility="gone"
+                    android:src="@mipmap/icon_man_pressed" />
                 <TextView
                     android:id="@+id/man_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="男"
+                    android:text="Male"
                     android:textSize="16dp"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
@@ -69,13 +71,14 @@
                     android:id="@+id/woman_icon"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:visibility="gone"
                     android:src="@mipmap/icon_woman"/>
                 <TextView
                     android:id="@+id/woman_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="女"
+                    android:text="Female"
                     android:textSize="16dp"
                     android:textColor="@color/colorLightBlue"
                     android:textStyle="bold"
@@ -101,7 +104,7 @@
                 android:layout_height="38dp"
                 android:layout_weight="1"
                 android:background="@color/colorLightBlue"
-                android:text="正面"
+                android:text="Front"
                 android:textSize="16dp"
                 android:textColor="@android:color/white"
                 android:gravity="center"
@@ -113,7 +116,7 @@
                 android:layout_width="0dp"
                 android:layout_height="38dp"
                 android:layout_weight="1"
-                android:text="反面"
+                android:text="Back"
                 android:textSize="16dp"
                 android:textColor="@color/colorLightBlue"
                 android:gravity="center"

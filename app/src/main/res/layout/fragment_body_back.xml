@@ -5,6 +5,6 @@
     android:layout_gravity="center"
     android:adjustViewBounds="true"
     android:src="@mipmap/man_back"
-    android:contentDescription="人体背面"
+    android:contentDescription="Back of the human body"
     android:clickable="true"
     android:tag="root"/>

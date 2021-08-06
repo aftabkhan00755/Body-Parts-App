@@ -1,9 +1,13 @@
 package com.angelocyj.bodypart;
 
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +18,7 @@ import com.angelocyj.bodypart.view.HumanBodyWidget;
 import com.angelocyj.bodypart.view.WaveEffectLayout;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,8 +33,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
-        setTitle("身体部位");
+
+        setTitle("BodyParts");
         initViews(savedInstanceState);
+
+
+
 
     }
 
@@ -116,5 +125,15 @@ public class MainActivity extends AppCompatActivity {
     public interface MyTouchListener
     {
         void onTouchEvent(MotionEvent event);
+    }
+
+    private void setAppLocate(String localeCode){
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.JELLY_BEAN){
+            conf.setLocale(new Locale(localeCode.toLowerCase()));
+        }
+        res.updateConfiguration(conf,dm);
     }
 }
