@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/drawable/body_rect_selector.xml" value="0.13333333333333333" />
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/drawable/btn_blue_circle_selector.xml" value="0.13333333333333333" />
         <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/activity_main.xml" value="0.18072916666666666" />
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/activity_main2.xml" value="0.11458333333333333" />
+        <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/detailactivity.xml" value="0.20199275362318841" />
         <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/fragment_body_back.xml" value="0.19519927536231885" />
         <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/fragment_body_front.xml" value="0.19519927536231885" />
         <entry key="..\:/office projects/android-body-part-master/app/src/main/res/layout/region_item.xml" value="0.18072916666666666" />

@@ -1,13 +1,16 @@
 package com.angelocyj.bodypart.region;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsoluteLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.angelocyj.bodypart.MainActivity2;
 import com.angelocyj.bodypart.R;
 import com.angelocyj.bodypart.view.WaveEffectLayout;
 
@@ -56,7 +59,9 @@ public class RegionView {
         regions = RegionParam.regionItems.get(regionType);
         for (Region region : regions) {
             regionViews.add(getItem(region));
+          //  Toast.makeText(mContext,"this is "+region.getName(),Toast.LENGTH_SHORT).show();
         }
+      //  Toast.makeText(mContext,"this is ",Toast.LENGTH_SHORT).show();
 
         regionViews.add(getItem(Region.SKIN));
         refresh();
@@ -66,11 +71,15 @@ public class RegionView {
         View itemView = layoutInflater.inflate(R.layout.region_item, null);
         final TextView textView = (TextView) itemView.findViewById(R.id.text_view);
         textView.setText(region.getName());
+     //   Toast.makeText(mContext,"you click"+region,Toast.LENGTH_SHORT).show();
         itemView.setTag(String.valueOf(region.getValue()));
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "You click " + region.getName(), Toast.LENGTH_SHORT);
+                Toast.makeText(mContext, "You click " + region.getValue(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, MainActivity2.class);
+                intent.putExtra("bodypart",region.getName());
+               mContext.startActivity(intent);
             }
         });
         return itemView;
@@ -92,12 +101,14 @@ public class RegionView {
                 leftRegionLayout.addView(regionViews.get(i), new AbsoluteLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT, 0, regions[i].getDestinationY()));
             }
+      //      Toast.makeText(mContext,"completed",Toast.LENGTH_SHORT).show();
 
             for (int i = columnSize; i < size; i++) {
 
                 rightRegionLayout.addView(regionViews.get(i), new AbsoluteLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT, 0, regions[i].getDestinationY()));
             }
+
 
             // add skin region
             rightRegionLayout.addView(getItem(Region.SKIN), new AbsoluteLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,

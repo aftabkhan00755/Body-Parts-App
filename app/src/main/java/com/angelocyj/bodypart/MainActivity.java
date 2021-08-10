@@ -127,13 +127,4 @@ public class MainActivity extends AppCompatActivity {
         void onTouchEvent(MotionEvent event);
     }
 
-    private void setAppLocate(String localeCode){
-        Resources res = getResources();
-        DisplayMetrics dm = res.getDisplayMetrics();
-        Configuration conf = res.getConfiguration();
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.JELLY_BEAN){
-            conf.setLocale(new Locale(localeCode.toLowerCase()));
-        }
-        res.updateConfiguration(conf,dm);
-    }
 }

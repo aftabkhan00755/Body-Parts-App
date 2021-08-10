@@ -18,17 +18,17 @@ public class RegionParam {
     public static final int REGION_BACK_LOWER_PART = 0x00000100;
 
     /**
-     * 身体图片标准长度 in pixels
+     * 身体图片标准长度 in pixels Body picture standard length
      */
     public static final int standardHeight = 1378;
 
     /**
-     * 身体图片标准宽度 in pixels
+     * 身体图片标准宽度 in pixels    Body image standard width
      */
     public static final int standardWidth = 693;
 
     /**
-     * 顶部透明部分偏移量
+     * 顶部透明部分偏移量   Offset of the top transparent part
      */
     public static final int standardOffsetY = 8;
 

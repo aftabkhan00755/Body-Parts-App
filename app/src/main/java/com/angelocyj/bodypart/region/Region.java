@@ -36,13 +36,15 @@ public enum Region {
     OTHER("Other", 21, LayoutSide.RIGHT, 0, 0, 0),
     ALLDISEASE("Alldisease", -1, LayoutSide.RIGHT, 0, 0, 0);
 
+
+
     private final String name;
     private final int value;
     private final int layoutSide;
-    private final int offsetSX, offsetSY; //路径起始坐标点
-    private final int offsetDY;   //部位中心点基准纵坐标
+    private final int offsetSX, offsetSY; //Path starting point
+    private final int offsetDY;   //Reference ordinate of the center point of the part
     private int startX, startY;
-    private final int offSetNum;  //部位之间纵坐标偏移数
+    private final int offSetNum;  //部位之间纵坐标偏移数  Number of ordinate offsets between parts
     private int destinationY; // = offsetDY + RegionParam.OFFSET_Y * offsetNum
 
     Region(final String name, final int value, final int layoutSide, final int offsetSX, final int offsetSY, final int offsetDY){

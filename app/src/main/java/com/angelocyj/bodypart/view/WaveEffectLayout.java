@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.angelocyj.bodypart.R;
 import com.angelocyj.bodypart.UIUtil;
@@ -157,9 +158,11 @@ public class WaveEffectLayout extends FrameLayout implements Runnable {
             } else {
                 int newRegionType = touchPointInRegion(x, y);
                 if (newRegionType == regionType) {
+                //    Toast.makeText(getContext(),"this is"+regionType,Toast.LENGTH_SHORT).show();
                     regionType = -1;
                 } else {
                     regionType = newRegionType;
+                 //   Toast.makeText(getContext(),"this is"+regionType,Toast.LENGTH_SHORT).show();
                 }
             }
             refresh(regionType);
@@ -264,6 +267,7 @@ public class WaveEffectLayout extends FrameLayout implements Runnable {
             int paddingTop = this.getPaddingTop();
 
             mHeadY = (219 + RegionParam.standardOffsetY) * bodyImageViewHeight / RegionParam.standardHeight + mLocationInScreen[1] + paddingTop;
+          //  Toast.makeText(getContext(),"this is head part",Toast.LENGTH_SHORT).show();
             mHandX1 = 200 * bodyImageView.getWidth() / RegionParam.standardWidth + bodyImageView.getLeft() + mLocationInScreen[0];
             mHandX2 = (RegionParam.standardWidth - 180) * bodyImageView.getWidth() / RegionParam.standardWidth  + bodyImageView.getLeft() + mLocationInScreen[0];
             mChestY = (219 + RegionParam.standardOffsetY + 232) * bodyImageViewHeight / RegionParam.standardHeight + mLocationInScreen[1] + paddingTop;
@@ -285,6 +289,7 @@ public class WaveEffectLayout extends FrameLayout implements Runnable {
             Region[] regions = item.getValue();
             for(int i = 0; i < regions.length; i++){
                 initLocationForRegion(regions[i], middleAlignmentX);
+              //  Toast.makeText(getContext(),"this is body part"+regions[i],Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -293,8 +298,10 @@ public class WaveEffectLayout extends FrameLayout implements Runnable {
     }
 
     private void initLocationForRegion(Region region, int middleAlignmentX){
-        if(Region.LayoutSide.LEFT == region.getLayoutSide())
+        if(Region.LayoutSide.LEFT == region.getLayoutSide()) {
+        //    Toast.makeText(getContext(), "this is  "+region, Toast.LENGTH_SHORT).show();
             region.setStartX(middleAlignmentX - (region.getOffsetSX() * bodyImageViewHeight / RegionParam.standardHeight));
+        }
         else
             region.setStartX(middleAlignmentX + (region.getOffsetSX() * bodyImageViewHeight / RegionParam.standardHeight));
 
@@ -319,18 +326,21 @@ public class WaveEffectLayout extends FrameLayout implements Runnable {
                 return RegionParam.REGION_BACK_LOWER_PART;
 
         }else {
-            if(x < mHandX1 || x > mHandX2)
+            if(x < mHandX1 || x > mHandX2) {
+            //    Toast.makeText(getContext(),"this is my hand part"+mHandX1,Toast.LENGTH_SHORT).show();
                 return RegionParam.REGION_FRONT_HAND;
-            else if (y < mHeadY)
+            }
+            else if (y < mHeadY) {
                 return RegionParam.REGION_FRONT_HEAD;
-            else if(y < mChestY)
+            }
+            else if(y < mChestY) {
                 return RegionParam.REGION_FRONT_CHEST;
+            }
             else if(y < mWaistY)
                 return RegionParam.REGION_FRONT_WAIST;
             else
                 return RegionParam.REGION_FRONT_LEG;
         }
-
     }
 
     private boolean isTouchPointInTransparent(int x, int y){

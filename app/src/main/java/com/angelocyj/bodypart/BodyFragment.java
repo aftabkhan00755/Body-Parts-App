@@ -29,7 +29,7 @@ public abstract class BodyFragment extends Fragment implements MainActivity.MyTo
     @Override
     public void onTouchEvent(MotionEvent event) {
         if(event.getAction() == MotionEvent.ACTION_UP){
-            //逻辑处理
+            //逻辑处理  Logical processing
         }
     }
 
